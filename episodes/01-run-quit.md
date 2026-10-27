@@ -218,7 +218,8 @@ Additional notes on Jupyter notebooks.
 Below is a screenshot of a Jupyter notebook running inside JupyterLab. If you are interested in
 more details, then see the [official notebook documentation][jupyterlab-notebook-docs].
 
-<p align='center'>   <img alt="Example Jupyter Notebook" src="fig/0_jupyterlab_notebook_screenshot.png" width="750"/>
+<p align='center'>
+  <img alt="Example Jupyter Notebook" src="fig/0_jupyterlab_notebook_screenshot.png" width="750"/>
 </p>
 
 :::::::::::::::::::::::::::::::::::::::::  callout
@@ -276,10 +277,10 @@ a "text cell" is one that contains ordinary prose written for human beings.
 
 ## The Notebook has Command and Edit modes.
 
-- If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the outer border of your code cell will change from gray to blue.
-- These are the **Command** (gray) and **Edit** (blue) modes of your notebook.
+- If you press <kbd>Esc</kbd> and <kbd>Return</kbd> alternately, the outer border of your code cell will change color.
+- These are the **Command** and **Edit** modes of your notebook. Their border colors can vary by platform and theme; on macOS, the Command mode border may appear blue and the Edit mode border gray.
 - Command mode allows you to edit notebook-level features, and Edit mode changes the content of cells.
-- When in Command mode (esc/gray),
+- When in Command mode,
   - The <kbd>b</kbd> key will make a new cell below the currently selected cell.
   - The <kbd>a</kbd> key will make one above.
   - The <kbd>x</kbd> key will delete the current cell.
@@ -300,11 +301,10 @@ Use the shortcuts to undo the last cell operation you performed.
 
 ## Solution
 
-Command mode has a grey border and Edit mode has a blue border.
-Use <kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>b</kbd> or <kbd>a</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>x</kbd>.
-You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Type <kbd>z</kbd>.
+Command and Edit mode border colors can vary by platform and theme. Use <kbd>Esc</kbd> and <kbd>Return</kbd> to switch between modes.
+You need to be in Command mode (press <kbd>Esc</kbd> if your cell is in Edit mode). Type <kbd>b</kbd> or <kbd>a</kbd>.
+You need to be in Command mode (press <kbd>Esc</kbd> if your cell is in Edit mode). Type <kbd>x</kbd>.
+You need to be in Command mode (press <kbd>Esc</kbd> if your cell is in Edit mode). Type <kbd>z</kbd>.
 
 
 
@@ -330,11 +330,11 @@ You need to be in Command mode (Press <kbd>Esc</kbd> if your cell is blue).  Typ
   - A simple plain-text format for writing lists, links,
     and other things that might go into a web page.
   - Equivalently, a subset of HTML that looks like what you'd send in an old-fashioned email.
-- Turn the current cell into a Markdown cell by entering the Command mode (<kbd>Esc</kbd>/gray)
+- Turn the current cell into a Markdown cell by entering the Command mode (<kbd>Esc</kbd>)
   and press the <kbd>M</kbd> key.
 - `In [ ]:` will disappear to show it is no longer a code cell and you will be able to write in
   Markdown.
-- Turn the current cell into a Code cell by entering the Command mode (<kbd>Esc</kbd>/gray) and
+- Turn the current cell into a Code cell by entering the Command mode (<kbd>Esc</kbd>) and
   press the <kbd>y</kbd> key.
 
 ### Markdown does most of what HTML does.
@@ -348,14 +348,14 @@ Table: Showing some markdown syntax and its rendered output.
 | ```                                   | <p></p>                                        |
 | *   Use asterisks                     | -   Use asterisks                              |
 | *   to create                         | -   to create                                  |
-| *   bullet lists.                     | -   bullet lists.                              |
+| *   bullet lists.                     | -   bullet lists                              |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
 | ```                                   | <p></p>                                        |
 | 1.   Use numbers                      | 1.   Use numbers                               |
 | 1.   to create                        | 2.   to create                                 |
-| 1.   numbered lists.                  | 3.   numbered lists.                           |
+| 1.   numbered lists.                  | 3.   numbered lists                            |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
@@ -381,16 +381,17 @@ Table: Showing some markdown syntax and its rendered output.
 +---------------------------------------+------------------------------------------------+
 | ```                                   | <p></p>                                        |
 | Line breaks                           | Line breaks                                    |
-| don't matter.                         | don't matter.                                  |
+| don't matter.                         | Line breaks                                    |
 |                                       |                                                |
 | But blank lines                       | But blank lines                                |
-| create new paragraphs.                | create new paragraphs.                         |
+| create new paragraphs.                | But blank lines create new paragraphs          |
 | ```                                   |                                                |
 +---------------------------------------+------------------------------------------------+
 +---------------------------------------+------------------------------------------------+
 | ```                                   | <p></p>                                        |
 | [Links](http://software-carpentry.org)| [Links](https://software-carpentry.org)        |
-| are created with `[...](...)`.        | are created with `[...](...)`.                 |
+| are created with `[...](...)`.        | [Links](https://software-carpentry.org)        |
+| are created with `[...](...)`.        |                                                |
 | Or use [named links][data-carp].      | Or use [named links][data_carpentry].          |
 |                                       |                                                |
 | [data-carp]: http://datacarpentry.org |                                                |
@@ -456,8 +457,6 @@ Python returns the output of the last calculation.
 3
 ```
 
-:::::::::::::::::::::::::
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -491,8 +490,6 @@ This could be useful to temporarily turn on and off cells in notebooks that get 
 x = 6 * 7 + 12 print(x)
 ```
 
-:::::::::::::::::::::::::
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 :::::::::::::::::::::::::::::::::::::::  challenge
@@ -524,8 +521,6 @@ Similarly, `-i` is in curly braces to make the whole statement the superscript f
 `\sum` and `\approx` are LaTeX commands for "sum over" and "approximate" symbols.
 
 
-
-:::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -566,5 +561,3 @@ Practice closing and restarting the JupyterLab server.
 - Markdown does most of what HTML does.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
-
-
